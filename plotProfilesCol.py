@@ -48,13 +48,6 @@ if showPlot!=0 and showPlot!=1:
     exit()
 
 
-#Compute phase
-phase = (sp.julianDates-sp.oriTime)/sp.period
-phase_int = phase.astype(int)
-phase = phase-phase_int
-phase_int -= phase_int.min()
-
-
 ############# Line plot ############
 
 #Define continuum level to plot
@@ -68,9 +61,11 @@ else:
 rows, column = np.shape(lp.flux)
 
 cycle = (sp.julianDates - sp.oriTime)/ sp.period
+cycle -= cycle.astype(int).min()
 phase = cycle - cycle.astype(int)
 phaseInd = np.argsort(phase)
 phase = phase[phaseInd]
+cycle = cycle[phaseInd]
 
 lp.flux = lp.flux[:,phaseInd]
 sp.vrad = sp.vrad[phaseInd]
