@@ -19,7 +19,14 @@ if len(sys.argv)<2 or len(sys.argv)>6:
     print(usage)
     exit()
 
-colNB,profNB,save,showPlot=2,10,0,1
+#Informations on star and template
+sp = sf.readStellarParams('stellarParams.dat')
+lp = sf.lineProf(sys.argv[1])
+
+save,showPlot=0,1
+
+colNB = int(np.ceil(sp.nbobs/5))
+profNB = int(np.ceil(sp.nbobs/colNB))
 
 for i, arg in enumerate(sys.argv[1:]):
     if arg[:4]=="save":
@@ -40,9 +47,6 @@ if showPlot!=0 and showPlot!=1:
     print(usage)
     exit()
 
-#Informations on star and template
-sp = sf.readStellarParams('stellarParams.dat')
-lp = sf.lineProf(sys.argv[1])
 
 #Compute phase
 phase = (sp.julianDates-sp.oriTime)/sp.period
