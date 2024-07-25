@@ -99,11 +99,11 @@ for j in range(colNB):
             plt.plot(lp.vel, lp.flux[:, i+profNB*j]- i*offset, c='k')
             plt.plot(lp.vel, np.ones(len(lp.vel))*continuum- i*offset, ':k')
             if sp.SB2=='y':
-                if lp.stype=='res':
-                    plt.plot(sp.vradB[i+profNB*j]-sp.vrad[i+profNB*j], continuum+ offset/2- i*offset, '|r')
-                else:
+                if lp.stype=='unCorrVel':
                     plt.plot(sp.vrad[i+profNB*j], continuum+ offset/2- i*offset, '|b')
                     plt.plot(sp.vradB[i+profNB*j], continuum+ offset/2- i*offset, '|r')
+                else:
+                    plt.plot(sp.vradB[i+profNB*j]-sp.vrad[i+profNB*j], continuum+ offset/2- i*offset, '|r')
 
             plt.annotate(str(np.round(sp.julianDates[phaseInd[i+profNB*j]]-2450000, decimals=2)), xy=[150, continuum+offset/3-i*offset])
             plt.annotate(r'$\phi$='+str(np.round(phase[i+profNB*j], decimals=2)), xy=[lp.vel.min(), continuum+offset/3-i*offset])
