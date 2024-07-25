@@ -69,7 +69,8 @@ phaseInd = np.argsort(phase)
 phase = phase[phaseInd]
 
 lp.flux = lp.flux[:,phaseInd]
-
+sp.vrad = sp.vrad[phaseInd]
+sp.vradB = sp.vradB[phaseInd]
 
 if (lp.flux.max()-continuum)>(continuum-lp.flux.min()):
     offset = (lp.flux.max()-continuum)
