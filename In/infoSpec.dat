@@ -1,0 +1,28 @@
+#Information on shape of spectra file
+
+#Object
+#Number of header line
+2
+#Unit (nm/A)
+nm
+#Column number
+#wl   I   sigI    V   sigV    Null   sigNull
+0   1   5   2   5   3   5
+
+#Template
+#Number of header line
+2
+#Unit
+nm
+#Column number
+#wl   I   sigI    V   sigV    Null   sigNull
+0   1   5   2   5   3   5
+
+#Template B (if SB2)
+#Number of header line
+2
+#Unit
+nm
+#Column number
+#wl   I   sigI    V   sigV    Null   sigNull
+0   1   5   2   5   3   5
