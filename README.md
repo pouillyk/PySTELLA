@@ -40,9 +40,9 @@ The wavelength in nanometer and outFile without '' nor extension. Example:
 ```
 python makeProfile.py 656.279 ha
 ```
-This command will produce the `Out/Data/ha.out` file, containing the Ha lines of all observations, corrected from there radial velocity. Additional keywords are availables for different options:
+This command will produce the `Out/Data/ha.out` file, containing the Ha lines of all observations, corrected from there radial velocity. Please note that the radial velocity used for correction is always the one given for the primary. Additional keywords are availables for different options:
 
- - `res=1` : computed the residual line, meaning it substracts the rotationally broadened and veiling-corrected photospheric template. It saves the Out/Data/outFile_res.out file (_res.out added automatically). With this mode, a figure will appear displaying the first line profile with the photospheric template as it will be substracted. This allows you to check that the various parameters and normalisation are correct. Once the figure close type `y` in the terminal to continue the procedure, `n` will quit to let you perform the modifications. In SB2 mode the template of both component are displayed, as well as the composition of the template (respecting the provided `LR`) that will be substracted.
+ - `res=1` : computed the residual line, meaning it substracts the rotationally broadened and veiling-corrected photospheric template. It saves the Out/Data/outFile_res.out file (_res.out added automatically). With this mode, a figure will appear displaying the first line profile with the photospheric template as it will be substracted. This allows you to check that the various parameters and normalisation are correct. Once the figure close type `y` in the terminal to continue the procedure, `n` will quit to let you perform the modifications. In SB2 mode the template of both components are displayed, as well as the composition of the templates (respecting the provided `LR`) that will be substracted.
  - With `res=1`, you can also add `inFile='outFile.out'`. If you already produced an outFile.out file, you can use it to compute the outFile_res.out file. It is a bit quicker to run and usefull if you modify the `outFile.out` file (as example, a re-normalisation, or a spike correction)
  - `corrVel=0` : produce an Out/Data/ouFile_unCorrVel.out file, containing the line profile not corrected from the radial velocity. WARNING: `corrVel=0` is not compatible with `res=1`.
  - `velMin=`/`velMax=` : to choose de velocity range on wich you want to compute the line profiles (default -500/+500 km/s)
@@ -75,7 +75,7 @@ python plotProfilesCol.py outFile.out
 ```
 
 For both you have the additional keywords `save=1` (to save the figure in `Out/Figure/outFileSup.pdf`, or `outFileCol.pdf`), and `showPlot=0` (to not show the plot, e.g. if you only want to save it)
-For `plotProfilesCol.py`, you also have `colNB=` (the number of columns you want in the plot, default 2) and `profNB=` (the number of line profiles you want in each column, default 10).
+For `plotProfilesCol.py`, you also have `colNB=` (the number of columns you want in the plot, default 2) and `profNB=` (the number of line profiles you want in each column, default 10). The velocity of the secondary is also indicated by a red thick, a blue thick is added to indicate the velocity of the primary if you are using a line profile not corrected from the radial velocity.
 
 To get a reminder on the usage:
 ```
@@ -89,7 +89,7 @@ python periodo2d.py outFile.out
 ```
 
 You also have the `save` and `showPlot` keywords
-It will show a plot with the frequency on y-axis, the line velocity on x-axis, and the periodogram power in color. A white-dotted line indicate the rotation period provided.
+It will show a plot with the frequency on y-axis, the line velocity on x-axis, and the periodogram power in color. A white-dotted line indicate the rotation period provided. In SB2 mode, the rotation period of the secondary is indicated by a cyan-dotted line, the orbital period by a red-dotted line.
 A lower panel shows the mean line profile and its variance.
 A second figure (never saved, even with `save=1`) displays the corresonding False Alarm Probability map.
 
