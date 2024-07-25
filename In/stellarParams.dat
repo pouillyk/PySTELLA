@@ -1,0 +1,39 @@
+############## Stellar parameters ############
+# Name    SB2 (y/n)    LR
+EXLup     n            0.0
+
+# Rotation period, projected velocity, inclination, veiling (A/B), orbital period
+#  P(A)     vsini(A)   i(A)   r(A)    P(B)       vsini(B)    i(B)   r(B)    Porb
+# (d)       (km/s)    (deg)   (%)     (d)         (km/s)     (deg)  (%)     (d)
+7.417       4.4        20     0.5     0.0          0.0       0.0    0.0     0.0
+ 
+
+# Number of observations
+11
+
+# Path                JulianDays        VradA    VradB(if SB2)
+Spectra/1938923pn.s   2457548.91042     -0.5      0.0
+Spectra/1939131pn.s   2457549.8964      -0.5      0.0
+Spectra/1939382pn.s   2457550.90738     -0.5      0.0 
+Spectra/1939608pn.s   2457551.87135     -0.5      0.0 
+Spectra/1940287pn.s   2457555.85625     -0.5      0.0 
+Spectra/1940914pn.s   2457558.86916     -0.5      0.0 
+Spectra/1941108pn.s   2457559.88712     -0.5      0.0 
+Spectra/1941310pn.s   2457560.90209     -0.5      0.0
+Spectra/1941527pn.s   2457561.90205     -0.5      0.0 
+Spectra/1941716pn.s   2457562.86001     -0.5      0.0 
+Spectra/1941914pn.s   2457563.86197     -0.5      0.0 
+
+# Origin of time
+2457544.4098174404
+
+# Photospheric template  (A/B)
+HD42581         HD42581
+
+# vrad    vsini    vrad(B)    vsini(B)
+# (km/s)  (km/s)   (km/s)     (km/s)
+4.63      2.63        4.63    2.63
+
+# Path                         Path(B)
+Spectra/espadons_hd42581.s     Spectra/espadons_hd42581.s
+
