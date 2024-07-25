@@ -42,7 +42,7 @@ python makeProfile.py 656.279 ha
 ```
 This command will produce the `Out/Data/ha.out` file, containing the Ha lines of all observations, corrected from there radial velocity. Additional keywords are availables for different options:
 
- - `res=1` : computed the residual line, meaning it substracts the rotationally broadened and veiling-corrected photospheric template. It saves the Out/Data/outFile_res.out file (_res.out added automatically)
+ - `res=1` : computed the residual line, meaning it substracts the rotationally broadened and veiling-corrected photospheric template. It saves the Out/Data/outFile_res.out file (_res.out added automatically). With this mode, a figure will appear displaying the first line profile with the photospheric template as it will be substracted. This allows you to check that the various parameters and normalisation are correct. Once the figure close type `y` in the terminal to continue the procedure, `n` will quit to let you perform the modifications. In SB2 mode the template of both component are displayed, as well as the composition of the template (respecting the provided `LR`) that will be substracted.
  - With `res=1`, you can also add `inFile='outFile.out'`. If you already produced an outFile.out file, you can use it to compute the outFile_res.out file. It is a bit quicker to run and usefull if you modify the `outFile.out` file (as example, a re-normalisation, or a spike correction)
  - `corrVel=0` : produce an Out/Data/ouFile_unCorrVel.out file, containing the line profile not corrected from the radial velocity. WARNING: `corrVel=0` is not compatible with `res=1`.
  - `velMin=`/`velMax=` : to choose de velocity range on wich you want to compute the line profiles (default -500/+500 km/s)
