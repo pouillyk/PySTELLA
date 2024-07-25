@@ -106,11 +106,10 @@ plt.subplots_adjust(hspace=.01, wspace=.01)
 #Plotting periodogram
 plot = ax1.pcolormesh(X,Y,Z,shading="gouraud")
 
-ax1.axhline(y=1/sp.period, color='w', ls=':')
 if sp.SB2=='y':
     ax1.axhline(y=1/sp.Porb, color='r', ls=':')
     ax1.axhline(y=1/sp.periodB, color='c', ls=':')
-
+ax1.axhline(y=1/sp.period, color='w', ls=':')
 
 
 ax_divider = make_axes_locatable(ax1)
@@ -159,10 +158,10 @@ if showPlot==1:
     fig = plt.figure()
     plt.title('False Alarm Probability')
     plot = plt.imshow(Zfap, interpolation='nearest', aspect='auto', extent=[X.min(), X.max(), Y.min(), Y.max()], vmax=0.3)
-    plt.axhline(y=1/sp.period, color='w', ls=':')
     if sp.SB2=='y':
         plt.axhline(y=1/sp.Porb, color='r', ls=':')
         plt.axhline(y=1/sp.periodB, color='c', ls=':')
+    plt.axhline(y=1/sp.period, color='w', ls=':')
     cbar = fig.colorbar(plot)
     plt.xlabel("v (km/s)")
     plt.ylabel(r"Frequency (d$^{-1}$)")
