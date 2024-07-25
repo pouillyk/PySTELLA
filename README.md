@@ -75,7 +75,7 @@ python plotProfilesCol.py outFile.out
 ```
 
 For both you have the additional keywords `save=1` (to save the figure in `Out/Figure/outFileSup.pdf`, or `outFileCol.pdf`), and `showPlot=0` (to not show the plot, e.g. if you only want to save it)
-For `plotProfilesCol.py`, you also have `colNB=` (the number of columns you want in the plot, default 2) and `profNB=` (the number of line profiles you want in each column, default 10). The velocity of the secondary is also indicated by a red thick, a blue thick is added to indicate the velocity of the primary if you are using a line profile not corrected from the radial velocity.
+For `plotProfilesCol.py`, you also have `colNB=` (the number of columns you want in the plot) and `profNB=` (the number of line profiles you want in each column). The default value of these parameters are 5 profiles maximum per column (defining the number of columns), then the profiles are equally distributed between the columns. The velocity of the secondary is also indicated by a red thick, a blue thick is added to indicate the velocity of the primary if you are using a line profile not corrected from the radial velocity.
 
 To get a reminder on the usage:
 ```
