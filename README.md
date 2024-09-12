@@ -6,7 +6,7 @@ A Python tool for SpecTral Emission Lines (variabiLity) Analysis
 This package allows you to perform a variability analysis of stellar emission lines (but can be adapted for absorption lines as well).
 It was developed from ESPaDOnS observations, but it should work using any instrument.
 It was designed for a terminal command launch, and text editor to fill the input files.
-Please cite Pouilly et al. 2024 (submitted) if you use it for publication, and add the following to the acknoledgment:
+Please cite Pouilly et al. 2024c (in presse, doi: 10.48550/arXiv.2409.03322) if you use it for publication, and add the following to the acknoledgment:
 The emission line variability was perfomed use the PySTELLA tool, available at https://github.com/pouillyk/PySTELLA
 
 The following library are needed:
